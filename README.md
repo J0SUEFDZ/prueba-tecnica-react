@@ -1,4 +1,6 @@
-# Enunciado
+# Technical Interview
+
+Check [SETUP.md](SETUP.md) for more information about the process.
 
 ## Requirements:
 

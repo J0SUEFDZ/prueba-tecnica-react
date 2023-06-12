@@ -1,10 +1,20 @@
-import { useState } from "react";
-import "./App.css";
+import { Header } from "./components/Header";
+import { Suspense, lazy } from "react";
+import { Route } from "wouter";
+
+const TopStoriesPage = lazy(() => import("./pages/TopStories"));
+const DetailPage = lazy(() => import("./pages/Detail"));
 
 function App() {
   return (
     <>
-      <h1>Hola mundo</h1>
+      <Header></Header>
+      <main>
+        <Suspense>
+          <Route path="/" component={TopStoriesPage}></Route>
+          <Route path="/item/:id" component={DetailPage}></Route>
+        </Suspense>
+      </main>
     </>
   );
 }
